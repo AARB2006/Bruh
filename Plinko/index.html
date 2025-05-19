@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0 w-screen h-screen bg-[#111113] font-sans overflow-hidden">
+
+    <div class="flex w-[97vw] h-[95vh] mx-auto my-5">
+
+        <!-- Plinko Board Area -->
+        <div id="plinkoBoard" class="flex-[3] mr-[5px] flex items-center justify-center text-2xl rounded-lg bg-[#111113]"></div>
+
+        <!-- Settings Panel -->
+        <div class="flex flex-col items-center justify-center gap-[30px] bg-[#4d4d53] w-1/4 rounded-lg">
+
+            <!-- Balance -->
+            <div class="flex items-center justify-center w-[350px] px-5 py-[18px] rounded-xl bg-[#121212] gap-[10px]">
+                <label for="balanceInput" class="text-white text-[1.1rem] mr-[10px]">Balance:</label>
+                <div class="relative inline-block">
+                    <span class="absolute left-[5px] top-1/2 -translate-y-1/2 text-gray-400 text-[1.1rem] pointer-events-none">₱</span>
+                    <input type="text" id="balanceInput" placeholder="> 0.00"
+                        class="pl-[25px] text-[13px] w-[180px] bg-white/10 rounded border-none outline-none text-white" />
+                </div>
+                <div class="flex gap-1 ml-2">
+                    <button type="button"
+                        class="bg-[#b538e2] hover:bg-[#741c84] text-white rounded-[16px] px-2 w-[60px] text-[20px] transition"
+                        id="place">Place Bet</button>
+                </div>
+            </div>
+
+            <!-- Rows -->
+            <div class="flex items-center justify-center w-[350px] px-5 py-[18px] rounded-xl bg-[#121212] gap-[10px]">
+                <label for="rangeInput" class="text-white text-[1.1rem] mr-[10px]">Rows:</label>
+                <input type="range" id="rangeInput" min="8" max="16" value="8"
+                    class="w-[180%] h-[12px] bg-gray-300 rounded-lg accent-white focus:outline-none" />
+                <span class="text-white ml-[10px]" id="rangeValue">8</span>
+            </div>
+
+            <!-- Balls -->
+            <div class="flex items-center justify-center w-[350px] px-5 py-[18px] rounded-xl bg-[#121212] gap-[10px]">
+                <label for="ballInput" class="text-white text-[1.1rem] mr-[10px]">Balls:</label>
+                <input type="range" id="ballInput" min="1" max="20" value="1"
+                    class="w-[180%] h-[12px] bg-gray-300 rounded-lg accent-white focus:outline-none" />
+                <span id="ballRangeValue" class="text-white ml-[10px]" >1</span>
+            </div>
+
+            <!-- Bet -->
+            <div class="flex items-center justify-center w-[350px] px-5 py-[18px] rounded-xl bg-[#121212] gap-[10px]">
+                <label for="betInput" class="text-white text-[1.1rem] mr-[10px]">Bet:</label>
+                <div class="relative inline-block">
+                    <span class="absolute left-[5px] top-1/2 -translate-y-1/2 text-gray-400 text-[1.1rem] pointer-events-none">₱</span>
+                    <input type="text" id="betInput" placeholder="0.00"
+                        class="pl-[25px] text-[15px] w-[120px] bg-white/10 rounded border-none outline-none text-white" />
+                </div>
+                <div class="flex gap-1 ml-2">
+                    <button type="button"
+                        class="bg-[#444] hover:bg-[#666] text-white rounded px-2 text-[15px] transition"
+                        id="halfBtn">1/2x</button>
+                    <button type="button"
+                        class="bg-[#444] hover:bg-[#666] text-white rounded px-2 text-[15px] transition"
+                        id="doubleBtn">2x</button>
+                    <button type="button"
+                        class="bg-[#444] hover:bg-[#666] text-white rounded px-2 text-[15px] transition"
+                        id="maxBtn">Max</button>
+                </div>
+            </div>
+
+            <!-- Risk -->
+            <div class="flex items-center justify-center w-[350px] px-5 py-[18px] rounded-xl bg-[#121212] gap-[10px]">
+                <label class="text-white text-[1.1rem] mr-[12px]">Risk Levels:</label>
+                <div id="riskButtons" class="flex gap-[2px] items-center bg-[#121212]">
+                    <button
+                        class="bg-[#121212] hover:bg-[#666] text-white rounded-[6px] px-0 w-[80px] py-[6px] text-base transition">Low</button>
+                    <button
+                        class="bg-[#121212] hover:bg-[#666] text-white rounded-[6px] px-0 w-[80px] py-[6px] text-base transition">Medium</button>
+                    <button
+                        class="bg-[#121212] hover:bg-[#666] text-white rounded-[6px] px-0 w-[80px] py-[6px] text-base transition">High</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="new.js"></script>
+</body>
+</html>
